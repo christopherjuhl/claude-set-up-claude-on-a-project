@@ -16,7 +16,11 @@ Without the `.env` deny rule, Claude could read real secrets into the conversati
 
 ## Verification
 
-<!-- TODO: fill in after checking in a fresh session -->
-- `/memory`: 
-- `/permissions`: 
-- Asked "How do I run the tests here?": 
+Checked in a fresh session:
+
+- `/memory`: `CLAUDE.md` shows as loaded from the project root.
+- `/permissions`: the allow, ask and deny rules from `.claude/settings.json` are all listed.
+- Asked "How do I run the tests here?": Claude answered from `CLAUDE.md` without extra explanation:
+  - All tests: `npm test`
+  - One file: `node --test tests/users.test.js`
+  - Only matching tests: `node --test --test-name-pattern="404" tests/users.test.js`
